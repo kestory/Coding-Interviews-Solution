@@ -27,7 +27,7 @@ public:
             TreeLinkNode* Parent = pNode->next;
             while (Parent != NULL) {
                 if (Current == Parent->left)//就是这里不能用val来比较：(Current->val == Parent->left->val)，会段错误！
-                    return Parent;
+                    return Parent;//所以就比较地址就行，节点都在树中
                 Current = Parent;
                 Parent = Parent->next;
             }
