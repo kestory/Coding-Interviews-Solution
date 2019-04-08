@@ -4,7 +4,7 @@ public:
 		if (pRoot == NULL)
 			return;
 
-		Swap(pRoot->left, pRoot->right)
+		// swap(pRoot->left, pRoot->right);
 		TreeNode* t = pRoot->left;
 		pRoot->left = pRoot->right;
 		pRoot->right = t;
