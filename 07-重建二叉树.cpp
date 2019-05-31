@@ -6,11 +6,12 @@ public:
 			return NULL;
 		// 前序遍历的第一个结点是根节点
 		TreeNode* root = new TreeNode(pre[0]);
-		// 在中序遍历中查找到根的位置
-		int rootIndex = 0;
-		for (rootIndex = 0; rootIndex < len; rootIndex++)
-			if (in[rootIndex] == pre[0])
-				break;
+		// 在中序遍历中查找到根的位置，使用find
+		vector<int>::iterator it = find(in.begin(), in.end(), pre[0]);
+		int rootIndex = it-in.begin();
+		// for (rootIndex = 0; rootIndex < len; rootIndex++)
+		// 	if (in[rootIndex] == pre[0])
+		// 		break;
 		vector<int> preLeft, preRight, inLeft, inRight;
 		for (int i = 0; i < rootIndex; ++i)
 		{
